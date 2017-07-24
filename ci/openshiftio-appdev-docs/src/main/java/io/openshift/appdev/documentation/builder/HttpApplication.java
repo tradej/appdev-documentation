@@ -24,23 +24,14 @@ import io.vertx.ext.web.handler.StaticHandler;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 import java.util.Properties;
 
 public class HttpApplication extends AbstractVerticle {
 
     private static final String propFileLocation = "/application.properties";
-    private static final Map<String, String> guideUrls = loadGuideUrls();    
     private static final Properties props = loadProperties();
-
-    private static HashMap<String, String> loadGuideUrls() {
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("spring-boot-tomcat", props.getProperty("url.link-spring-boot-runtime-guide")); 
-        map.put("vertx", props.getProperty("url.link-vertx-runtime-guide")); 
-        map.put("wf-swarm", props.getProperty("url.link-wf-swarm-runtime-guide")); 
-        return map;
-    }
+    private static final Map<String, String> guideUrls = loadGuideUrls();    
 
     private static Properties loadProperties() {
         Properties props = new Properties();
@@ -52,6 +43,14 @@ public class HttpApplication extends AbstractVerticle {
         return props;
     }
     
+    private static HashMap<String, String> loadGuideUrls() {
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("spring-boot-tomcat", props.getProperty("url.link-spring-boot-runtime-guide")); 
+        map.put("vertx", props.getProperty("url.link-vertx-runtime-guide")); 
+        map.put("wf-swarm", props.getProperty("url.link-wf-swarm-runtime-guide")); 
+        return map;
+    }
+
     @Override
     public void start(Future<Void> future) {
         // Create a router object.
