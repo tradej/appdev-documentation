@@ -52,20 +52,20 @@ public class HttpApplicationTest {
     public void getHealth(TestContext context) {
         // Send a request and get a response
         async = context.async();
-        client.get(8080, "localhost", "/health")
-            .send(resp -> {
-                    assertThat(resp.succeeded()).isTrue();
-                    assertThat(resp.result().statusCode()).isEqualTo(200);
-                    async.complete();
-            });
+        client.get(8080, "localhost", "/health").send(resp -> {
+            context.assertTrue(resp.succeeded());
+            context.assertEquals(200, resp.result().statusCode());
+            async.complete();
+        });
     }
     
     @Test
     public void testRedirects(TestContext context) {
         async = context.async();
         client.get(8080, "localhost", "/docs/mission-http-api-vertx.html").send(resp -> {
-            assertThat(resp.succeeded()).isTrue();
-            assertThat(resp.result().statusCode()).isEqualTo(302);
+            context.assertTrue(resp.succeeded());
+            context.assertEquals("/docs/vertx-runtime.html#mission-http-api-vertx", resp.result().getHeader("Location"));
+            context.assertEquals(302, resp.result().statusCode());
             async.complete();
         });
     }

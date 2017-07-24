@@ -19,7 +19,6 @@ package io.openshift.appdev.documentation.builder;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import io.vertx.ext.web.Router;
-import io.vertx.ext.web.handler.RedirectAuthHandler;
 import io.vertx.ext.web.handler.StaticHandler;
 
 import java.io.IOException;
