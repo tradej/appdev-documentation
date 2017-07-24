@@ -60,7 +60,17 @@ public class HttpApplicationTest {
     }
     
     @Test
-    public void testRedirects(TestContext context) {
+    public void testRootRedirect(TestContext context) {
+        async = context.async();
+        client.get(8080, "localhost", "/").send(resp -> {
+            context.assertTrue(resp.succeeded());
+            context.assertEquals("/docs", resp.result().getHeader("Location"));
+            context.assertEquals(302, resp.result().statusCode());
+            async.complete();
+        });
+    }
+    @Test
+    public void testMissionRedirects(TestContext context) {
         async = context.async();
         client.get(8080, "localhost", "/docs/mission-http-api-vertx.html").send(resp -> {
             context.assertTrue(resp.succeeded());
