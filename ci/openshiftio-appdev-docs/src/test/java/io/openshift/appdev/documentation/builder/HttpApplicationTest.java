@@ -33,6 +33,7 @@ public class HttpApplicationTest {
 
     private Vertx vertx;
     private WebClient client;
+    private Async async;
 
     @Before
     public void before(TestContext context) {
@@ -50,13 +51,23 @@ public class HttpApplicationTest {
     @Test
     public void getHealth(TestContext context) {
         // Send a request and get a response
-        Async async = context.async();
+        async = context.async();
         client.get(8080, "localhost", "/health")
             .send(resp -> {
                     assertThat(resp.succeeded()).isTrue();
                     assertThat(resp.result().statusCode()).isEqualTo(200);
                     async.complete();
             });
+    }
+    
+    @Test
+    public void testRedirects(TestContext context) {
+        async = context.async();
+        client.get(8080, "localhost", "/docs/mission-http-api-vertx.html").send(resp -> {
+            assertThat(resp.succeeded()).isTrue();
+            assertThat(resp.result().statusCode()).isEqualTo(302);
+            async.complete();
+        });
     }
 
 }
