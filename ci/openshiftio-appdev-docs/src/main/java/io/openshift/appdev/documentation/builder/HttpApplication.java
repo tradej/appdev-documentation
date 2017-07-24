@@ -68,7 +68,7 @@ public class HttpApplication extends AbstractVerticle {
             String mission = context.request().getParam("param0");
             String runtime = context.request().getParam("param1");
             String runtimeUrl = guideUrls.get(runtime);
-            String newUrl = String.format("%s-runtime.html#mission-%s-%s", runtimeUrl, mission, runtime);
+            String newUrl = String.format("%s#mission-%s-%s", runtimeUrl, mission, runtime);
             context.response().putHeader("location", newUrl).setStatusCode(302).end();
         });
         router.get("/docs/*").handler(
