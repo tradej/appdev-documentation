@@ -1,7 +1,5 @@
 = Change Log
 
-== link:https://github.com/openshiftio/appdev-documentation/milestone/4[Current Development]
-
 == link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-08-28[2017-08-28 Release]
 
 * https://github.com/openshiftio/appdev-documentation/issues/535[Issue
