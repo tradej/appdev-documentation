@@ -1,7 +1,68 @@
 = Change Log
 
-== link:https://github.com/openshiftio/appdev-documentation/issues?q=is%3Aclosed+milestone%3A%22Current+Development%22[Current Development]
+== link:https://github.com/openshiftio/appdev-documentation/milestone/4[Current Development]
 
+== link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-08-28[2017-08-28 Release]
+
+* https://github.com/openshiftio/appdev-documentation/issues/535[Issue
+535] - remove authenticated but not authorized interaction from SSO
+missions
+* https://github.com/openshiftio/appdev-documentation/issues/529[Issue
+529] - validate_guides.sh does not work on a Mac
+* https://github.com/openshiftio/appdev-documentation/issues/527[Issue
+527] - Create note boosters not available from launcher
+* https://github.com/openshiftio/appdev-documentation/issues/524[Issue
+524] - Update readme files per feedback
+* https://github.com/openshiftio/appdev-documentation/issues/522[Issue
+522] - Update description for npm install in Nodejs runtime
+* https://github.com/openshiftio/appdev-documentation/issues/518[Issue
+518] - remove production branch from contrib guide
+* https://github.com/openshiftio/appdev-documentation/issues/511[Issue
+511] - Change the expected proficiency level for the Secured mission to
+Advanced
+* https://github.com/openshiftio/appdev-documentation/issues/506[Issue
+506] - Update mission description topic used by front end
+* https://github.com/openshiftio/appdev-documentation/issues/505[Issue
+505] - Create a commit hook to prevent breaking launchpad-frontend
+* https://github.com/openshiftio/appdev-documentation/issues/496[Issue
+496] - Re-publish Contrib Guide with latest updates
+* https://github.com/openshiftio/appdev-documentation/issues/495[Issue
+495] - Update link targets in launcher review screen
+* https://github.com/openshiftio/appdev-documentation/issues/494[Issue
+494] - Add `npm install` to Node docs
+* https://github.com/openshiftio/appdev-documentation/issues/493[Issue
+493] - Add NodeJS to GSG Next Steps section
+* https://github.com/openshiftio/appdev-documentation/issues/492[Issue
+492] - Add explicit anchor labels to proficiency levels section in intro
+paragraphs
+* https://github.com/openshiftio/appdev-documentation/issues/491[Issue
+491] - Update Milestones and CHANGELOG.adoc
+* https://github.com/openshiftio/appdev-documentation/issues/490[Issue
+490] - Move testing into Dockerfile.build
+* https://github.com/openshiftio/appdev-documentation/issues/489[Issue
+489] - Replace mentions and links to this repo and appdev.openshift.io
+by attributes
+* https://github.com/openshiftio/appdev-documentation/issues/477[Issue
+477] - Update internal docs with new deployment process and links
+* https://github.com/openshiftio/appdev-documentation/issues/463[Issue
+463] - Cleanup: rephrase callout in Spring Boot runime guide
+* https://github.com/openshiftio/appdev-documentation/issues/456[Issue
+456] - Investigate ways to automate changelog generation and updates
+using the GitHub API.
+* https://github.com/openshiftio/appdev-documentation/issues/445[Issue
+445] - Add `compile`option to mvn command when running locally in README
+* https://github.com/openshiftio/appdev-documentation/issues/440[Issue
+440] - Consolidate script naming
+* https://github.com/openshiftio/appdev-documentation/issues/439[Issue
+439] - Remove unnecessary files
+* https://github.com/openshiftio/appdev-documentation/issues/337[Issue
+337] - Consider adding code owners to project
+* https://github.com/openshiftio/appdev-documentation/pull/514[PR 514] -
+Issue 511: Raise expected proficiency level for the Secured Mission to
+Advanced + add callout to intro
+
+
+////
 * Issue link:https://github.com/openshiftio/appdev-documentation/issues/439[#439]: Removed unused files from the documentation repository.
 * Issue link:https://github.com/openshiftio/appdev-documentation/issues/440[#440]: Updated script names to a unified format.
 * Issue link:https://github.com/openshiftio/appdev-documentation/issues/445[#445]: Added `compile` option to `mvn` command example in the local build procedure steps in the Booster README file.
@@ -11,6 +72,7 @@
 * Issue link:https://github.com/openshiftio/appdev-documentation/issues/493[#493]: Added NodeJS runtime guide link to the GSG _Next Steps_ section.
 * Issue link:https://github.com/openshiftio/appdev-documentation/issues/495[#495]: Updated link targets in launcher review screen.
 * Issue link:https://github.com/openshiftio/appdev-documentation/issues/506[#506]: Updated mission description topics used by the Launcher front end.
+////
 
 == link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-08-14[2017-08-14 Release]
 // list closed issues with changes planned for upcoming release
