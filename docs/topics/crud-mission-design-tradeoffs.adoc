@@ -5,9 +5,5 @@
 a| * Each runtime decides how the database interactions are implemented. One can use JDBC while others can use JPA or access ORM APIs directly. Each runtime decides what would be the best way.
 
  * Each runtime decides how the schema is going to be created.
-a|
-
-// not sure this has to be here.
-// is the database application scalable in the Missions?
- * The example PostgreSQL database provided with the Relational Database Backend Missions is not backed up with persistent storage. Changes to the database are lost if you stop or redeploy the database application.
+a| * The example PostgreSQL database provided with the Relational Database Backend Missions is not backed up with persistent storage. Changes to the database are lost if you stop or redeploy the database application. The OpenShift documentation has more details on link:https://docs.openshift.com/online/dev_guide/persistent_volumes.html[using persistent storage with containers]. The OpenShift documentation also has additional  link:https://docs.openshift.com/online/architecture/additional_concepts/storage.html[background information on persistent storage] as well as link:https://docs.openshift.com/online/dev_guide/volumes.html[more details on configuring volumes] which can be used for persistent storage.
 |====================================================================
