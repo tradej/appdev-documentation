@@ -1,11 +1,11 @@
 [[update-booster]]
 = Updating Your Booster and Deploying the Changes
-To push changes to this booster running in {OpenShiftOnline} or your {OpenShiftLocal}, you can push a new commit to the GitHub repository and start a new build.
+To make changes to a booster running in {OpenShiftOnline} or your {OpenShiftLocal}, push a new commit to the GitHub repository with the booster and start a new build.
 
 [sidebar]
 .Prerequisites
 --
-* Have a booster deployed to xref:oso-create-booster[{OpenShiftOnline}] or xref:osl-create-booster[{OpenShiftLocal}] using the _Deploy in OpenShift Online_ option.
+* A booster deployed to xref:oso-create-booster[{OpenShiftOnline}] or xref:osl-create-booster[{OpenShiftLocal}] using the _Deploy in OpenShift Online_ option.
 --
 
 .Procedure
@@ -16,10 +16,10 @@ To push changes to this booster running in {OpenShiftOnline} or your {OpenShiftL
 $ git clone git@github.com:USERNAME/PROJECT-NAME.git
 ----
 
-. Open your project in your desired IDE or editor, such as xref:use_devstudio[JBDS].
+. Open your project in a text editor or an IDE, such as xref:use_devstudio[JBDS].
 . Make an update to the project.
-. Save your changes.
-. Commit and push your changes back to GitHub:
+. Save the changes.
+. Commit and push the changes back to GitHub:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -28,10 +28,10 @@ $ git commit -m "Made an update"
 $ git push
 ----
 
-. Navigate back to the {OpenShiftOnline} or {OpenShiftLocal} Web console and ensure the project of your mission is selected.
-.. If your booster is deployed to {OpenShiftOnline}, a new build will automatically start.
-.. If your booster is deployed to your {OpenShiftLocal}, click on the three dots on the right side of your application's deployment and choose _Start Build_.
+. Navigate back to the {OpenShiftOnline} or {OpenShiftLocal} Web console and ensure the project of your booster is selected.
+.. If the booster is deployed to {OpenShiftOnline}, a new build will automatically start.
+.. If the booster is deployed to your {OpenShiftLocal}, click on the three dots on the right side of the deployment of the application, and choose _Start Build_.
 
-. After you deployment to complete, confirm your changes.
+. After the deployment is complete, confirm the changes.
 +
-Your deployment is complete when you see _Build #2 is complete_ under _Builds_ and a `#2` next to the application's name under _Deployment_. This number will increase for each additional build and deployment.
+The deployment is complete when you see _Build #2 is complete_ under _Builds_ and `#2` next to the name of the application under _Deployment_. This number will increase for each additional build and deployment.
