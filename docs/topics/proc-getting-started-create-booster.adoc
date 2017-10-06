@@ -2,7 +2,6 @@
 = Creating and Deploying a Booster Using {OpenShiftOnline}
 You can quickly create, build, and deploy a booster to {OpenShiftOnline} using the {launcher} application. The {launcher} application creates a new repository in your GitHub account containing the source code of the booster, and deploys it to your {OpenShiftOnline} account. It can also create a ZIP of the booster for you to download and run on your localhost.
 
-[sidebar]
 .Prerequisites
 --
 * An link:https://www.openshift.com[{OpenShiftOnline}] account

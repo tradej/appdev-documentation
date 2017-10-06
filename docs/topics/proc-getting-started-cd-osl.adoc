@@ -3,7 +3,6 @@
 You can quickly create, build, and deploy a booster to your {OpenShiftLocal} using the {launcher} application. The {launcher} application creates a new repository in your GitHub account containing the code of the booster, and deploys the booster to your {OpenShiftLocal}. It can also create a ZIP of the booster for you to download and run on your localhost.
 
 
-[sidebar]
 .Prerequisites
 --
 * A link:https://developers.redhat.com[Red Hat Developers] account
