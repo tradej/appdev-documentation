@@ -36,7 +36,7 @@ include::topics/wildfly-swarm/docs/reference/configuration.adoc[leveloffset=+2]
 
 == Packaging your application
 
-This sections contains information about packaging your {WildFlySwarm}&ndash;based application for deployment and execution.
+This sections contains information about packaging your {WildFlySwarm}&#x2013;based application for deployment and execution.
 
 include::topics/wildfly-swarm/docs/concepts/packaging-types.adoc[leveloffset=+2]
 include::topics/wildfly-swarm/docs/howto/create-an-uberjar/index.adoc[leveloffset=+2]
