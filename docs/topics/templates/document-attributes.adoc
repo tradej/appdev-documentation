@@ -33,6 +33,9 @@
 // Needs to be set to either "WildFly" or "Red Hat JBoss EAP"
 :WildFly: Red Hat JBoss EAP
 
+//override the named ndash HTML entity
+:ndash: &#x2013;
+
 :app-name: MY_APP_NAME
 :project-name: MY_PROJECT_NAME
 :revnumber: {localdate}
