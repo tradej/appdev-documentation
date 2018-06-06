@@ -1,4 +1,4 @@
-[[vertx-additional-resources]]
+[id='vertx-additional-resources_{context}']
 = {VertX} Additional Resources
 
 * link:https://www.reactivemanifesto.org/[The Reactive Manifesto]

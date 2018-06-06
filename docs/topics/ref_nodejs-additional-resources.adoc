@@ -1,4 +1,4 @@
-[[nodejs-additional-resources]]
+[id='nodejs-additional-resources_{context}']
 = {NodeJS} Additional Resources
 
 * link:https://nodejs.org/[{NodeJS} Home Page]

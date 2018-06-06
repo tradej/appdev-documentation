@@ -1,4 +1,4 @@
-[[sb-additional-resources]]
+[id='springboot-additional-resources_{context}']
 = {SpringBoot} Additional Resources
 
 * link:https://docs.openshift.org/latest/architecture/[OpenShift Architecture Overview]
