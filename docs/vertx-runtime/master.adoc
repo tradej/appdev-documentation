@@ -19,7 +19,7 @@ include::topics/vertx-runtime-overview.adoc[leveloffset=+1]
 // include::topics/runtime-info-community-version.adoc[leveloffset=+1]
 
 //runtime information modules
-include::topics/vertx-key-concepts.adoc[leveloffset=+2]
+include::topics/con_key-vertx-concepts.adoc[leveloffset=+2]
 
 //include::topics/vertx-community-and-product-versions.adoc[leveloffset=+2]
 
@@ -32,7 +32,7 @@ include::topics/configuring-vertx.adoc[leveloffset=+2]
 include::topics/proc_configuring-your-vertx-application-to-use-agroal.adoc[leveloffset=+2]
 
 // MISSIONS
-include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
+include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
 
 [[vertx-available-missions-and-boosters]]
 == Available Missions and Boosters for {Vertx}
@@ -48,7 +48,7 @@ include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_http-api-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: http-api
 :parameter-mission-name: {name-mission-http-api}
@@ -80,7 +80,7 @@ include::topics/configmap-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-include::topics/configmap-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_configmap-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: configmap
 :parameter-mission-name: {name-mission-configmap}
@@ -122,7 +122,7 @@ include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_crud-design-tradeoffs.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-oso
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
@@ -187,7 +187,7 @@ include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 // CB design tradeoffs
-include::topics/circuit-breaker-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: circuit-breaker
 :parameter-mission-name: {name-mission-circuit-breaker}

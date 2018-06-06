@@ -1,3 +1,4 @@
+[id='configmap-design-tradeoffs_{context}']
 
 = {name-mission-configmap} design tradeoffs
 

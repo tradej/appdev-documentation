@@ -14,7 +14,7 @@ This guide covers concepts as well as practical details needed by developers to 
 
 include::topics/nodejs-runtime-overview.adoc[leveloffset=+1]
 
-include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
+include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
 
 
 [[nodejs-available-missions-and-boosters]]
@@ -31,7 +31,7 @@ include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_http-api-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: http-api
 :parameter-mission-name: {name-mission-http-api}
@@ -57,7 +57,7 @@ include::topics/configmap-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-include::topics/configmap-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_configmap-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: configmap
 :parameter-mission-name: {name-mission-configmap}
@@ -88,7 +88,7 @@ include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_crud-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: crud
 :parameter-mission-name: {name-mission-crud}
@@ -142,7 +142,7 @@ include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
 
 // CB design tradeoffs
-include::topics/circuit-breaker-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: circuit-breaker
 :parameter-mission-name: {name-mission-circuit-breaker}
@@ -281,7 +281,7 @@ include::topics/proc_deploy-existing-nodejs-app.adoc[leveloffset=+2]
 include::topics/appendix-nodeshift.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/http-api-nodejs-package-json.adoc[leveloffset=+1]
+include::topics/con_breakdown-of-package-json-properties.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/nodejs-dev-guide-additional-resources.adoc[leveloffset=+1]
