@@ -1,5 +1,5 @@
 [[vertx-additional-resources]]
-= Additional Resources
+= {VertX} Additional Resources
 
 * link:https://www.reactivemanifesto.org/[The Reactive Manifesto]
 * link:http://vertx.io[{VertX} project]

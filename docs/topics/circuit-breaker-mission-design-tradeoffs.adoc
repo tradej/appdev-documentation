@@ -1,3 +1,6 @@
+
+= {name-mission-circuit-breaker} design tradeoffs
+
 .Design Tradeoffs
 [width="100%",options="header"]
 |====================================================================

@@ -1,5 +1,5 @@
 [[key-vertx-concepts]]
-= Overview of Key {Vertx} Concepts
+= Key {Vertx} Concepts
 
 .Cloud- and Container-Native Applications
 

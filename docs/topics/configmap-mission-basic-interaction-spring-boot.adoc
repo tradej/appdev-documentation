@@ -2,6 +2,8 @@
 
 The booster provides a default HTTP endpoint that accepts GET requests.
 
+.Procedure
+
 . Use `curl` to execute a `GET` request against the booster. You can also use a browser to do this.
 +
 [source,bash,options="nowrap",subs="attributes+"]

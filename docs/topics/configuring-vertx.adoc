@@ -1,7 +1,9 @@
 [[configuring-vertx]]
 = Configuring Your Application to Use {Vertx}
 
-To configure your application to use {Vertx}:
+To configure your application to use {Vertx}, follow these steps.
+
+.Procedure
 
 . Reference the {Vertx} BOM (Bill of Materials) artifact in the `<dependencyManagement>` section of the `pom.xml` file of your application. Specify the `<type>pom</type>` and `<scope>import</scope>`:
 +
@@ -70,4 +72,6 @@ Include the following properties in your `pom.xml` file to track the version of 
 </project>
 --
 
-For more information on packaging your {Vertx} application, see the link:https://vmp.fabric8.io/#packaging[Vert.x Maven Plugin] documentation.
+.Related Information
+
+* link:https://vmp.fabric8.io/#packaging[Vert.x Maven Plugin] documentation.

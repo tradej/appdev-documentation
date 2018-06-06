@@ -1,5 +1,7 @@
 = Interacting with the Unmodified Booster
 
+.Procedure
+
 . Navigate to the `greeting` service using your browser.
 
 . Click _Invoke the service_ once.
