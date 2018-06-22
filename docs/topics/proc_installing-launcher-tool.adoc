@@ -9,11 +9,13 @@
 = Installing {launcher} Tool
 Install a local customized instance of the {launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
 
-.Prerequisites
+[discrete]
+== Prerequisites
 * xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}[{OpenShiftLocal} running].
 * A link:{link-launcher-openshift-local-install-guide}#creating-a-github-personal-access-token[GitHub personal access token].
 
-.Procedure
+[discrete]
+== Procedure
 . Open the {OpenShiftLocal} Web console and log in.
 . Click _New Project_ to create a new OpenShift project to house the {launcher} tool.
 +
@@ -59,7 +61,8 @@ image::minishift_launcher_booting.png[{launcher} booting]
 
 . When all pods are running, click the link at the top of all pods, which typically ends in `nip.io`. A new browser tab opens with the {launcher} tool. This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
 
-.Additional Resources
+[discrete]
+== Additional resources
 * Start using your {launcher} tool to launch booster applications.
 * See the link:{link-getting-started-guide}[{getting-started-guide-name}] for a walk-through of running a booster application.
 * Read the runtime guides for an overview of the runtimes and their boosters:
