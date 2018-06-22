@@ -23,7 +23,7 @@ include::topics/proc_installing-launcher-tool.adoc[leveloffset=+1]
 
 // temporary location for Nexus install
 [appendix]
-include::topics/minishift-install-nexus-setup.adoc[leveloffset=+1]
+include::topics/proc_using-a-nexus-repository-server-on-a-openshiftlocal.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/ref_glossary.adoc[leveloffset=+1]
