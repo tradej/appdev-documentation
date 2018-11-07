@@ -1,4 +1,4 @@
-[id='exposing-metrics_{context}']
+[id='exposing-metrics-using-prometheus-in-a-spring-boot-application']
 = Exposing application metrics using Prometheus in a {SpringBoot} application.
 
 * Configure your application to expose metrics.
@@ -11,18 +11,24 @@ Prometheus actively connects to a monitored application to collect data; the app
 * Prometheus configured to collect metrics from the application:
 +
 --
-. Get the default Prometheus configuration using the following command:
+. Download and extract the link:https://prometheus.io/download/[archive^] with the latest Prometheus release:
 +
-[source,bash,opts="nowrap"]
+[source,bash,options="nowrap"]
 ----
-# docker run -it --rm --entrypoint /bin/sh prom/prometheus -c 'cat /etc/prometheus/prometheus.yml'
+$ wget https://github.com/prometheus/prometheus/releases/download/v2.4.3/prometheus-2.4.3.linux-amd64.tar.gz
+$ tar -xvf  prometheus-2.4.3.linux-amd64.tar.gz
 ----
-+
-Store the output in the `prometheus.yml` file in the directory with your application.
 
-. Append the following snippet to the `prometheus.yml` file to make Prometheus automatically collect metrics from your application:
+. Navigate to the directory with Prometheus:
 +
-[source,yaml]
+[source,bash,options="nowrap"]
+----
+$ cd  prometheus-2.4.3.linux-amd64
+----
+
+. Append the following snippet to the `prometheus.yml` file to specify the port where your application exposes the metrics endpoint:
++
+[source,yaml,options="nowrap"]
 ----
   scrape_configs:
     - job_name: 'spring'
@@ -31,8 +37,8 @@ Store the output in the `prometheus.yml` file in the directory with your applica
         - targets: ['localhost:8080']
 ----
 +
-By default, {SpringBoot}-based applications expose metrics at the `/prometheus` endpoint, if you have the `spring-boot-actuator` dependency in your `pom.xml` file.
-The endpoint for exposing metrics can be changed by setting the `endpoints.prometheus.id` property to a different path.
+If you have the `spring-boot-actuator` dependency in your `pom.xml` file, {SpringBoot}-based applications expose metrics at the `/prometheus` endpoint by default.
+You can change the endpoint at which your application exposes the metrics by setting the `endpoints.prometheus.id` property to a different path.
 +
 The endpoint is secured by default.
 To ensure that metrics collection works in your application, you must:
@@ -40,16 +46,15 @@ To ensure that metrics collection works in your application, you must:
 * make the endpoint unsecured by setting a property, such as `management.security.enabled=false`
 --
 
-* The Prometheus server running on `localhost` using Docker:
+* The Prometheus server started on `localhost`:
 +
 --
-[source,bash,opts="nowrap"]
-----
-# docker run -it --rm --network host -p 9090:9090 -v $PWD/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
-----
+Start Prometheus and wait until the `Server is ready to receive web requests` message is displayed in the console.
 
-Include the `--network host` option to allow Prometheus to connect to your application.
-Wait until the `Server is ready to receive web requests` message is displayed in the console.
+[source,bash,options="nowrap"]
+----
+$ ./prometheus
+----
 --
 
 .Procedure
