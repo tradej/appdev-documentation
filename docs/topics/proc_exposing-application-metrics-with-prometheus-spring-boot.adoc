@@ -26,18 +26,20 @@ $ tar -xvf  prometheus-2.4.3.linux-amd64.tar.gz
 $ cd  prometheus-2.4.3.linux-amd64
 ----
 
-. Append the following snippet to the `prometheus.yml` file to specify the port where your application exposes the metrics endpoint:
+. Append the following snippet to the `prometheus.yml` file to specify the port where your application exposes the metrics endpoint.
++
+The `scrape_interval` setting is optional and sets Prometheus to collect metrics every 5 seconds.
 +
 [source,yaml,options="nowrap"]
 ----
-  scrape_configs:
-    - job_name: 'spring'
-      metrics_path: '/prometheus'
-      static_configs:
-        - targets: ['localhost:8080']
+  - job_name: 'spring-actuator'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['localhost:8080']
 ----
 +
-If you have the `spring-boot-actuator` dependency in your `pom.xml` file, {SpringBoot}-based applications expose metrics at the `/prometheus` endpoint by default.
+If you have the `spring-boot-starter-actuator` dependency in your `pom.xml` file, {SpringBoot}-based applications expose metrics at the `/actuator/prometheus` endpoint by default.
 You can change the endpoint at which your application exposes the metrics by setting the `endpoints.prometheus.id` property to a different path.
 +
 The endpoint is secured by default.
@@ -59,7 +61,6 @@ $ ./prometheus
 
 .Procedure
 
-// Which spring Boot starter provides metrics collection functionalities
 . Include the `spring-boot-starter-actuator`, `micrometer-registry-prometheus` and `micrometer-spring-legacy` dependencies in your `pom.xml`.
 The `micrometer-spring-legacy` dependency is required to provide Micrometer support for {SpringBoot} 1.5 applications.
 
@@ -87,15 +88,15 @@ The `micrometer-spring-legacy` dependency is required to provide Micrometer supp
 . Annotate methods or classes with the metrics annotations, for example:
 +
 --
-[source,java]
+[source,java,options="nowrap"]
 ----
-include::src/main/java/org/wildfly/swarm/howto/metrics/MyResource.java[tag=metrics-resource-method,indent=0]
+//TBD
 ----
 
-Here, the `@Counted(monotonic = true)` annotation is used to keep track of how many times this method was invoked.
-The `@Timed` annotation is used to keep track of how long the invocations took.
+//Here, the `@Counted(monotonic = true)` annotation is used to keep track of how many times this method was invoked.
+//The `@Timed` annotation is used to keep track of how long the invocations took.
 
-In this example, a JAX-RS resource method was annotated directly, but you can annotate any CDI bean in your application as well.
+//In this example, a JAX-RS resource method was annotated directly, but you can annotate any CDI bean in your application as well.
 --
 
 . Launch your application:
