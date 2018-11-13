@@ -40,7 +40,7 @@ The `scrape_interval` setting is optional and sets Prometheus to collect metrics
 ----
 +
 If you have the `spring-boot-starter-actuator` dependency in your `pom.xml` file, {SpringBoot}-based applications expose metrics at the `/actuator/prometheus` endpoint by default.
-You can change the endpoint at which your application exposes the metrics by setting the `endpoints.prometheus.id` property to a different path.
+You can change the endpoint at which your application exposes the metrics by setting the `endpoints.prometheus.id` property to a different path, for example: `endpoints.prometheus.id=micrometheus`.
 +
 The endpoint is secured by default.
 To ensure that metrics collection works in your application, you must:
@@ -84,15 +84,49 @@ The `micrometer-spring-legacy` dependency is required to provide Micrometer supp
   ...
 </dependencies>
 ----
++
+`spring-boot-starter-actuator` automatically records a `Timer` metric on each endpoint exposed your application.
+The default name for the `Timer` metric is set to `http.server.requests`.
+You can set a custom name for the metric:
++
+[source,properties,options="nowrap"]
+----
+# default is `http.server.requests`
+management.metrics.web.server.requests-metric-name=custom.timer.metric.name
+----
++
+The `Timer` metric contains a set of dimensions recorded for every request.
+By default, these dimensions are:
++
+// maybe not required for the procedure?
+--
+`method`:: the HTTP method used when calling the endpoint (for example, `GET` or `PUT`)
+
+`status`:: the numeric HTTP status code returned in response to the request (for example, `200`, `201`, `500`)
+
+`uri`:: the URI template prior to variable substitution (for example, `/api/person/{id}`)
+
+`exception`:: if an exception is thrown by your application upon receiving a request, this dimension records the simple name of the exception class
+--
+
+. Alternatively, to only record the `Timer` for specific endpoints:
++
+--
+. Disable the `auto-time-requests` property in the `spring-boot-starter-actuator` configuration in your application.
++
+[source,properties,options="nowrap"]
+----
+# true by default
+management.metrics.web.server.auto-time-requests=false
+----
 
 . Annotate methods or classes with the metrics annotations, for example:
 +
---
 [source,java,options="nowrap"]
 ----
 //TBD
 ----
-
+--
 //Here, the `@Counted(monotonic = true)` annotation is used to keep track of how many times this method was invoked.
 //The `@Timed` annotation is used to keep track of how long the invocations took.
 
