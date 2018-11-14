@@ -63,7 +63,7 @@ $ ./prometheus
 
 . Include the `spring-boot-starter-actuator`, `micrometer-registry-prometheus` and `micrometer-spring-legacy` dependencies in your `pom.xml`.
 The `micrometer-spring-legacy` dependency is required to provide Micrometer support for {SpringBoot} 1.5 applications.
-
++
 .pom.xml
 [source,xml]
 ----
@@ -98,21 +98,15 @@ management.metrics.web.server.requests-metric-name=custom.timer.metric.name
 The `Timer` metric contains a set of dimensions recorded for every request.
 By default, these dimensions are:
 +
-// maybe not required for the procedure?
---
 `method`:: the HTTP method used when calling the endpoint (for example, `GET` or `PUT`)
-
 `status`:: the numeric HTTP status code returned in response to the request (for example, `200`, `201`, `500`)
-
 `uri`:: the URI template prior to variable substitution (for example, `/api/person/{id}`)
-
 `exception`:: if an exception is thrown by your application upon receiving a request, this dimension records the simple name of the exception class
---
 
-. Alternatively, to only record the `Timer` for specific endpoints:
+. Alternatively, to only record the `Timer` metric for specifics endpoints:
 +
 --
-. Disable the `auto-time-requests` property in the `spring-boot-starter-actuator` configuration in your application.
+. Disable the `auto-time-requests` property in the `spring-boot-starter-actuator` configuration for your application.
 +
 [source,properties,options="nowrap"]
 ----
@@ -120,11 +114,15 @@ By default, these dimensions are:
 management.metrics.web.server.auto-time-requests=false
 ----
 
-. Annotate methods or classes with the metrics annotations, for example:
+. Annotate methods or classes with the `@io.micrometer.core.annotation.Timed` annotation, for example:
 +
 [source,java,options="nowrap"]
 ----
-//TBD
+@RestController
+@Timed
+public class MyController {
+    @GetMapping("/api/people")
+    public List<Person> listPeople() { ... }
 ----
 --
 //Here, the `@Counted(monotonic = true)` annotation is used to keep track of how many times this method was invoked.
