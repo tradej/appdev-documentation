@@ -119,16 +119,18 @@ management.metrics.web.server.auto-time-requests=false
 [source,java,options="nowrap"]
 ----
 @RestController
-@Timed
-public class MyController {
-    @GetMapping("/api/people")
-    public List<Person> listPeople() { ... }
-----
---
-//Here, the `@Counted(monotonic = true)` annotation is used to keep track of how many times this method was invoked.
-//The `@Timed` annotation is used to keep track of how long the invocations took.
+public class GreetingController {
 
-//In this example, a JAX-RS resource method was annotated directly, but you can annotate any CDI bean in your application as well.
+    @RequestMapping("/greeting")
+    @Timed
+    public String get() {
+        return "Hello from a timed endpoint";
+    }
+}
+----
++
+The `@Timed` annotation is used to keep track of the time it takes to invoke the metered endpoint.
+--
 
 . Launch your application:
 +
@@ -141,17 +143,17 @@ $ mvn spring-boot:run
 +
 [source,bash,opts="nowrap"]
 ----
-$ curl http://localhost:8080/
-Hello from counted and timed endpoint
+$ curl http://localhost:8080/greeting
+{"id":1,"content":"Hello from a timed endpoint"}
 ----
 
 . Wait at least 15 seconds for the collection to happen, and see the metrics in Prometheus UI:
 +
 --
-. Open the Prometheus UI at link:http://localhost:9090/[http://localhost:9090/^] and type `hello` into the _Expression_ box.
-. From the suggestions, select for example `application:hello_count` and click _Execute_.
-. In the table that is displayed, you can see how many times the resource method was invoked.
-. Alternatively, select `application:hello_time_mean_seconds` to see the mean time of all the invocations.
+. Open the Prometheus UI at link:http://localhost:9090/[http://localhost:9090/^] and type `requests` into the _Expression_ box.
+. From the suggestions, select for example `http.server.requests` and click _Execute_.
+. In the table that is displayed, you can see how long it takes to invoke the metered endpoint.
+//. Alternatively, select `application:hello_time_mean_seconds` to see the mean time of all the invocations.
 
 Note that all metrics you created are prefixed with `application:`.
 There are other metrics, automatically exposed by {SpringBoot}.
@@ -160,4 +162,4 @@ Those metrics are prefixed with `base:` and `vendor:` and expose information abo
 
 .Additional resources
 
-* For additional types of metrics, see the link:https://github.com/eclipse/microprofile-metrics[MicroProfile Metrics documentation^].
+* For additional information on using Micrometer metrics with Spring Boot, see the link:https://micrometer.io/docs/ref/spring/1.5[Micrometer reference documentation for Spring 1.5.x^].
