@@ -2,6 +2,8 @@ include::topics/templates/document-attributes.adoc[]
 //override for a cleaner TOC
 :toclevels: 2
 :built-for-spring-boot:
+// guide failed without this set explicitly
+:doctype: book
 
 = {spring-boot-runtime-guide-name}
 :runtime: {SpringBoot}

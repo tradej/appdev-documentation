@@ -131,7 +131,6 @@ management.metrics.web.server.auto-time-requests=false
 //The `@Timed` annotation is used to keep track of how long the invocations took.
 
 //In this example, a JAX-RS resource method was annotated directly, but you can annotate any CDI bean in your application as well.
---
 
 . Launch your application:
 +
