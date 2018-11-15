@@ -1,5 +1,8 @@
-[id='exposing-metrics-using-prometheus-in-a-spring-boot-application']
-= Exposing application metrics using Prometheus in a {SpringBoot} application.
+
+[id='exposing-metrics-using-prometheus-with-spring-boot_{context}']
+= Exposing application metrics using Prometheus with {SpringBoot}
+
+In this example, you:
 
 * Configure your application to expose metrics.
 * Collect and view the data using Prometheus.
@@ -44,8 +47,9 @@ You can change the endpoint at which your application exposes the metrics by set
 +
 The endpoint is secured by default.
 To ensure that metrics collection works in your application, you must:
+
 * include authentication in your Prometheus metrics collection endpoint, or
-* make the endpoint unsecured by setting a property, such as `management.security.enabled=false`
+* make the endpoint unsecured by setting a property, such as `management.security.enabled=false`.
 --
 
 * The Prometheus server started on `localhost`:
@@ -86,35 +90,40 @@ The `micrometer-spring-legacy` dependency is required to provide Micrometer supp
   ...
 </dependencies>
 ----
-+
-`spring-boot-starter-actuator` automatically records a `Timer` metric on each endpoint exposed your application.
+
+. Collect metrics from your application:
+** By default, `spring-boot-starter-actuator` automatically records a `Timer` metric on each endpoint exposed your application.
 The default name for the `Timer` metric is set to `http.server.requests`.
 You can set a custom name for the metric:
 +
+--
 [source,properties,options="nowrap"]
 ----
-# default is `http.server.requests`
 management.metrics.web.server.requests-metric-name=custom.timer.metric.name
 ----
-+
+
+The name is `http.server.requests` by default.
+
 The `Timer` metric contains a set of dimensions recorded for every request.
 By default, these dimensions are:
-+
-`method`:: the HTTP method used when calling the endpoint (for example, `GET` or `PUT`)
-`status`:: the numeric HTTP status code returned in response to the request (for example, `200`, `201`, `500`)
-`uri`:: the URI template prior to variable substitution (for example, `/api/person/{id}`)
-`exception`:: if an exception is thrown by your application upon receiving a request, this dimension records the simple name of the exception class
 
-. Alternatively, to only record the `Timer` metric for specifics endpoints:
+`method`:: The HTTP method for calling the endpoint, for example, `GET` or `PUT`.
+`status`:: The numeric HTTP status code returned in response to the request, for example, `200`, `201`, `500`.
+`uri`:: The URI template before the variable substitution, for example, `/api/person/{id}`.
+`exception`:: If an exception is thrown by your application upon receiving a request, this dimension records the simple name of the exception class.
+--
+
+** Alternatively, only record the `Timer` metric for specific endpoints:
 +
 --
-. Disable the `auto-time-requests` property in the `spring-boot-starter-actuator` configuration for your application.
+. Disable the `auto-time-requests` property in the `spring-boot-starter-actuator` configuration for your application:
 +
 [source,properties,options="nowrap"]
 ----
-# true by default
 management.metrics.web.server.auto-time-requests=false
 ----
+
+The property is set to `true` by default.
 
 . Annotate methods or classes with the `@io.micrometer.core.annotation.Timed` annotation, for example:
 +
@@ -155,7 +164,6 @@ Hello from a timed endpoint
 . Open the Prometheus UI at link:http://localhost:9090/[http://localhost:9090/^] and type `requests` into the _Expression_ box.
 . From the suggestions, select for example `http.server.requests` and click _Execute_.
 . In the table that is displayed, you can see how long it takes to invoke the metered endpoint.
-//. Alternatively, select `application:hello_time_mean_seconds` to see the mean time of all the invocations.
 
 Note that all metrics you created are prefixed with `application:`.
 There are other metrics, automatically exposed by {SpringBoot}.
@@ -165,3 +173,4 @@ Those metrics are prefixed with `base:` and `vendor:` and expose information abo
 .Additional resources
 
 * For additional information on using Micrometer metrics with Spring Boot, see the link:https://micrometer.io/docs/ref/spring/1.5[Micrometer reference documentation for Spring 1.5.x^].
+
