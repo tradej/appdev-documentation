@@ -33,13 +33,13 @@ The `scrape_interval` setting is optional and sets Prometheus to collect metrics
 [source,yaml,options="nowrap"]
 ----
   - job_name: 'spring-actuator'
-    metrics_path: '/actuator/prometheus'
+    metrics_path: '/prometheus'
     scrape_interval: 5s
     static_configs:
     - targets: ['localhost:8080']
 ----
 +
-If you have the `spring-boot-starter-actuator` dependency in your `pom.xml` file, {SpringBoot}-based applications expose metrics at the `/actuator/prometheus` endpoint by default.
+If you have the `spring-boot-starter-actuator` dependency in your `pom.xml` file, {SpringBoot}-based applications expose metrics at the `/prometheus` endpoint by default.
 You can change the endpoint at which your application exposes the metrics by setting the `endpoints.prometheus.id` property to a different path, for example: `endpoints.prometheus.id=micrometheus`.
 +
 The endpoint is secured by default.
@@ -76,10 +76,12 @@ The `micrometer-spring-legacy` dependency is required to provide Micrometer supp
   <dependency>
     <groupId>io.micrometer</groupId>
     <artifactId>micrometer-spring-legacy</artifactId>
+    <version>1.1.0</version>
   </dependency>
   <dependency>
     <groupId>io.micrometer</groupId>
     <artifactId>micrometer-registry-prometheus</artifactId>
+    <version>1.1.0</version>
   </dependency>
   ...
 </dependencies>
@@ -144,7 +146,7 @@ $ mvn spring-boot:run
 [source,bash,opts="nowrap"]
 ----
 $ curl http://localhost:8080/greeting
-{"id":1,"content":"Hello from a timed endpoint"}
+Hello from a timed endpoint
 ----
 
 . Wait at least 15 seconds for the collection to happen, and see the metrics in Prometheus UI:
